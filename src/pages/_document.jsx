@@ -39,6 +39,7 @@ export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
+        <script defer data-domain="loicpoullain.com" src="https://plausible.io/js/plausible.js"></script>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
           rel="alternate"

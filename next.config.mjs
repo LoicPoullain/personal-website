@@ -13,7 +13,8 @@ const nextConfig = {
   },
   images: {
     unoptimized: true
-  }
+  },
+  basePath: '/personal-website',
 }
 
 const withMDX = nextMDX({

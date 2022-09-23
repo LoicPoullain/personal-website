@@ -84,7 +84,7 @@ function Resume({ title, items, showLinkedInBtn }) {
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                {role.company}
+                <a href={role.link}>{role.company}</a>
               </dd>
               {role.jobs.map(job => (
                 <React.Fragment>
@@ -131,6 +131,7 @@ export default function Home({ articles }) {
     {
       company: 'Indy',
       logo: logoIndy,
+      link: 'https://www.indy.fr/',
       jobs: [
         {
           title: 'Fullstack Software Engineer II',
@@ -150,6 +151,7 @@ export default function Home({ articles }) {
     {
       company: 'FoalTS',
       logo: logoFoal,
+      link: 'https://foalts.org/',
       jobs: [
         {
           title: 'Open Source Backend Engineer',
@@ -164,6 +166,7 @@ export default function Home({ articles }) {
     {
       company: 'CentraleSupélec, Paris-Saclay University',
       logo: logoCentraleSupelec,
+      link: 'https://www.centralesupelec.fr/',
       jobs: [
         {
           title: 'Professor in Software Engineering',
@@ -175,6 +178,7 @@ export default function Home({ articles }) {
     {
       company: 'French Parliament',
       logo: logoAssembleeNationale,
+      link: 'https://www.assemblee-nationale.fr/',
       jobs: [
         {
           title: 'Frontend Software Engineer',
@@ -186,6 +190,7 @@ export default function Home({ articles }) {
     {
       company: 'Dassault Systèmes',
       logo: logoDassaultSystemes,
+      link: 'https://www.3ds.com/',
       jobs: [
         {
           title: 'Frontend Engineer Intern',
@@ -197,6 +202,7 @@ export default function Home({ articles }) {
     {
       company: 'Datadog',
       logo: logoDatadog,
+      link: 'https://www.datadoghq.com/',
       jobs: [
         {
           title: 'Software Engineer Intern',
@@ -211,6 +217,7 @@ export default function Home({ articles }) {
     {
       company: 'CentraleSupélec, Paris-Saclay University',
       logo: logoCentraleSupelec,
+      link: 'https://www.centralesupelec.fr/',
       jobs: [
         {
           title: 'BsC & MsC, Computer Science',

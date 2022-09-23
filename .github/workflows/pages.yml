@@ -35,6 +35,7 @@ jobs:
         run: |
           npm ci
           npx next build
+          npx next export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

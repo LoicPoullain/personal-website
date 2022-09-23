@@ -18,7 +18,7 @@ function Appearance({ title, description, events, cta, href }) {
       <Card.Title as="h3" href={href || '#'}>
         {title}
       </Card.Title>
-      {events.map(event => <Card.Eyebrow decorate>{event}</Card.Eyebrow>)}
+      {events.map(event => <Card.Eyebrow decorate key={event}>{event}</Card.Eyebrow>)}
       <Card.Description>{description}</Card.Description>
       {cta && <Card.Cta>{cta}</Card.Cta>}
     </Card>

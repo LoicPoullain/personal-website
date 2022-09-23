@@ -87,7 +87,7 @@ function Resume({ title, items, showLinkedInBtn }) {
                 <a href={role.link}>{role.company}</a>
               </dd>
               {role.jobs.map(job => (
-                <React.Fragment>
+                <React.Fragment key={job.title}>
                   <dt className="sr-only">Role</dt>
                   <dd className="text-xs text-zinc-500 dark:text-zinc-400">
                     {job.title}

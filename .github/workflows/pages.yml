@@ -23,8 +23,8 @@ jobs:
       - name: Build
         run: |
           npm ci
-          npm run build
-          npm run export
+          npx next build
+          npx next export
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

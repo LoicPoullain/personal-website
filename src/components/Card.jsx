@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import clsx from 'clsx'
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
 
 function ChevronRightIcon(props) {
   return (
@@ -52,14 +53,14 @@ Card.Description = function CardDescription({ children }) {
   )
 }
 
-Card.Cta = function CardCta({ children }) {
+Card.Cta = function CardCta({ children, externalLink }) {
   return (
     <div
       aria-hidden="true"
       className="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500"
     >
       {children}
-      <ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />
+      {externalLink ? (<ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />) : (<ChevronRightIcon className="ml-1 h-4 w-4 stroke-current" />)}
     </div>
   )
 }

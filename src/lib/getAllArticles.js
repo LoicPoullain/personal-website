@@ -47,6 +47,15 @@ export async function getAllArticles() {
       // component:
       externalURL: 'https://tech.indy.fr/2022/06/10/how-to-use-vscode-debugger-with-multiple-docker-services/'
     },
+    {
+      // slug:
+      author: 'Loïc Poullain',
+      date: '2022-10-13',
+      title: 'How to securely store passwords in a database?',
+      description: 'Passwords must never be stored in clear text in the database. If they were, attackers would be able to steal them if the database ever gets compromised. To avoid this, two actions are necessary to store a password securely: hashing and salting.',
+      // component:
+      externalURL: 'https://tech.indy.fr/2022/10/13/how-to-securely-store-passwords-in-a-database/'
+    },
   ]
 
   return articles.concat(externalArticles).sort((a, z) => new Date(z.date) - new Date(a.date))

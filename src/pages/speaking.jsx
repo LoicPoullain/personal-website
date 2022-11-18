@@ -45,7 +45,7 @@ export default function Conferences() {
               href="https://www.youtube.com/watch?v=HNOKdQqrs9U"
               title="A long trip in open source development"
               description="After four years of developing an open source framework, FoalTS, I share with you the challenges I faced."
-              events={["BreizhCamp, Meetup LyonJS"]}
+              events={["Codeurs en Seine, BreizhCamp, Meetup LyonJS"]}
               cta="Watch video (FR)"
             />
             <Appearance

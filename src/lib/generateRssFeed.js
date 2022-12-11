@@ -14,7 +14,7 @@ export async function generateRssFeed() {
 
   let feed = new Feed({
     title: author.name,
-    description: 'Your blog description',
+    description: 'Loïc Poullain\'s blog',
     author,
     id: siteUrl,
     link: siteUrl,

@@ -228,11 +228,13 @@ export default function Home({ articles }) {
     }
   ];
 
+  const jobTitle = 'Fullstack Software Engineer';
+
   return (
     <>
       <Head>
         <title>
-          Loïc Poullain - Software engineer, open source developer, creator of FoalTS
+          Loïc Poullain - {jobTitle}
         </title>
         <meta
           name="description"
@@ -242,7 +244,7 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, open source developer, creator of FoalTS.
+            {jobTitle}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             I’m Loïc, a software engineer based in Lyon in France. I’m the creator of <a href="https://foalts.org/">FoalTS</a>,

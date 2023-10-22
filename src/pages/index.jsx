@@ -134,17 +134,9 @@ export default function Home({ articles }) {
       link: 'https://www.indy.fr/',
       jobs: [
         {
-          title: 'Fullstack Software Engineer II',
-          start: '2022',
-          end: {
-            label: 'Present',
-            dateTime: new Date().getFullYear(),
-          },
-        },
-        {
           title: 'Fullstack Software Engineer',
           start: '2021',
-          end: '2022',
+          end: '2023',
         },
       ],
     },

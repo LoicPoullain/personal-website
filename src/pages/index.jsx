@@ -134,7 +134,7 @@ export default function Home({ articles }) {
       link: 'https://www.indy.fr/',
       jobs: [
         {
-          title: 'Fullstack Software Engineer',
+          title: 'Full-Stack Software Engineer',
           start: '2021',
           end: '2023',
         },
@@ -220,7 +220,7 @@ export default function Home({ articles }) {
     }
   ];
 
-  const jobTitle = 'Fullstack Software Engineer';
+  const jobTitle = 'Full-Stack Software Engineer';
 
   return (
     <>

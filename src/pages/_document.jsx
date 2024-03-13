@@ -35,6 +35,14 @@ const modeScript = `
   }
 `
 
+const gaScript = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-165RK9WPLZ');
+`;
+
 export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
@@ -51,6 +59,8 @@ export default function Document() {
           type="application/feed+json"
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-165RK9WPLZ"></script>
+        <script dangerouslySetInnerHTML={{ __html: gaScript }} />
       </Head>
       <body className="flex h-full flex-col bg-zinc-50 dark:bg-black">
         <Main />

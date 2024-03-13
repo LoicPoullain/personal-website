@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -56,6 +57,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
+      <GoogleAnalytics gaId="G-165RK9WPLZ" />
     </Html>
   )
 }

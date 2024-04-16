@@ -18,6 +18,7 @@ import logoDassaultSystemes from '@/images/logos/dassault_systemes.jpg'
 import logoDatadog from '@/images/logos/datadog.jpg'
 import logoIndy from '@/images/logos/indy.jpg'
 import logoFoal from '@/images/logos/foal.png'
+import logoLinito from '@/images/logos/linito.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
@@ -79,14 +80,19 @@ function Resume({ title, items, showLinkedInBtn }) {
         {items.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7 rounded-full" unoptimized />
+              <Image
+                src={role.logo}
+                alt=""
+                className="h-7 w-7 rounded-full"
+                unoptimized
+              />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
                 <a href={role.link}>{role.company}</a>
               </dd>
-              {role.jobs.map(job => (
+              {role.jobs.map((job) => (
                 <React.Fragment key={job.title}>
                   <dt className="sr-only">Role</dt>
                   <dd className="text-xs text-zinc-500 dark:text-zinc-400">
@@ -95,8 +101,9 @@ function Resume({ title, items, showLinkedInBtn }) {
                   <dt className="sr-only">Date</dt>
                   <dd
                     className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                    aria-label={`${job.start.label ?? job.start} until ${job.end.label ?? job.end
-                      }`}
+                    aria-label={`${job.start.label ?? job.start} until ${
+                      job.end.label ?? job.end
+                    }`}
                   >
                     <time dateTime={job.start.dateTime ?? job.start}>
                       {job.start.label ?? job.start}
@@ -117,7 +124,11 @@ function Resume({ title, items, showLinkedInBtn }) {
         ))}
       </ol>
       {showLinkedInBtn && (
-        <Button href="https://www.linkedin.com/in/loicpoullain/" variant="secondary" className="group mt-6 w-full">
+        <Button
+          href="https://www.linkedin.com/in/loicpoullain/"
+          variant="secondary"
+          className="group mt-6 w-full"
+        >
           View resume on LinkedIn
           <LinkedInIcon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
         </Button>
@@ -128,6 +139,18 @@ function Resume({ title, items, showLinkedInBtn }) {
 
 export default function Home({ articles }) {
   let workItems = [
+    {
+      company: 'Linito',
+      logo: logoLinito,
+      link: 'https://www.linito.io/',
+      jobs: [
+        {
+          title: 'Founder',
+          start: '2024',
+          end: 'Present',
+        },
+      ],
+    },
     {
       company: 'Indy',
       logo: logoIndy,
@@ -217,17 +240,15 @@ export default function Home({ articles }) {
           end: '2018',
         },
       ],
-    }
-  ];
+    },
+  ]
 
-  const jobTitle = 'Full-Stack Software Engineer';
+  const jobTitle = 'Full-Stack Software Engineer'
 
   return (
     <>
       <Head>
-        <title>
-          Loïc Poullain - {jobTitle}
-        </title>
+        <title>Loïc Poullain - {jobTitle}</title>
         <meta
           name="description"
           content="I’m Loïc, a software engineer based in Lyon in France. I’m the creator of FoalTS, a full-featured Node.js framework for building web applications."
@@ -239,8 +260,9 @@ export default function Home({ articles }) {
             {jobTitle}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Loïc, a software engineer based in Lyon in France. I’m the creator of <a href="https://foalts.org/">FoalTS</a>,
-            a full-featured Node.js framework for building web applications.
+            I’m Loïc, a software engineer based in Lyon in France. I’m the
+            creator of <a href="https://foalts.org/">FoalTS</a>, a full-featured
+            Node.js framework for building web applications.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -270,7 +292,10 @@ export default function Home({ articles }) {
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
-              <Article key={article.externalURL || article.slug} article={article} />
+              <Article
+                key={article.externalURL || article.slug}
+                article={article}
+              />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">

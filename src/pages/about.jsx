@@ -79,13 +79,6 @@ export default function About() {
               <SocialLink href="https://www.linkedin.com/in/loicpoullain/" icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
               </SocialLink>
-              <SocialLink
-                href="loic.poullain@protonmail.com"
-                icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-              >
-                loic.poullain@protonmail.com
-              </SocialLink>
             </ul>
           </div>
         </div>

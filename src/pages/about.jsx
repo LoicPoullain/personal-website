@@ -4,12 +4,8 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import {
-  TwitterIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import { RiBlueskyFill, RiGithubFill, RiLinkedinBoxFill, RiTwitterFill } from '@remixicon/react'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -70,14 +66,17 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.com/Loic_Poullain" icon={TwitterIcon}>
+              <SocialLink href="https://twitter.com/Loic_Poullain" icon={RiTwitterFill}>
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="https://github.com/LoicPoullain" icon={GitHubIcon} className="mt-4">
+              <SocialLink href="https://github.com/LoicPoullain" icon={RiGithubFill} className="mt-4">
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com/in/loicpoullain/" icon={LinkedInIcon} className="mt-4">
+              <SocialLink href="https://www.linkedin.com/in/loicpoullain/" icon={RiLinkedinBoxFill} className="mt-4">
                 Follow on LinkedIn
+              </SocialLink>
+              <SocialLink href="https://bsky.app/profile/loicpoullain.bsky.social" icon={RiBlueskyFill} className="mt-4">
+                Follow on Bluesky
               </SocialLink>
             </ul>
           </div>

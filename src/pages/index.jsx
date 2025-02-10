@@ -6,12 +6,6 @@ import React from 'react'
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
-import {
-  TwitterIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  DevToIcon,
-} from '@/components/SocialIcons'
 import logoAssembleeNationale from '@/images/logos/assemblee_nationale.jpg'
 import logoCentraleSupelec from '@/images/logos/centralesupelec.jpg'
 import logoDassaultSystemes from '@/images/logos/dassault_systemes.jpg'
@@ -22,6 +16,7 @@ import logoLinito from '@/images/logos/linito.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import { RiBlueskyFill, RiGithubFill, RiLinkedinBoxFill, RiTwitterFill } from '@remixicon/react'
 
 function BriefcaseIcon(props) {
   return (
@@ -130,7 +125,7 @@ function Resume({ title, items, showLinkedInBtn }) {
           className="group mt-6 w-full"
         >
           View resume on LinkedIn
-          <LinkedInIcon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          <RiLinkedinBoxFill className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
         </Button>
       )}
     </div>
@@ -268,22 +263,22 @@ export default function Home({ articles }) {
             <SocialLink
               href="https://twitter.com/Loic_Poullain"
               aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://dev.to/loicpoullain"
-              aria-label="Follow on Dev.to"
-              icon={DevToIcon}
+              icon={RiTwitterFill}
             />
             <SocialLink
               href="https://github.com/LoicPoullain"
               aria-label="Follow on GitHub"
-              icon={GitHubIcon}
+              icon={RiGithubFill}
             />
             <SocialLink
               href="https://www.linkedin.com/in/loicpoullain/"
               aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
+              icon={RiLinkedinBoxFill}
+            />
+            <SocialLink
+              href="https://bsky.app/profile/loicpoullain.bsky.social"
+              aria-label="Follow on Bluesky"
+              icon={RiBlueskyFill}
             />
           </div>
         </div>

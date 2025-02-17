@@ -5,7 +5,13 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/portrait.jpg'
-import { RiBlueskyFill, RiGithubFill, RiLinkedinBoxFill, RiTwitterFill } from '@remixicon/react'
+import {
+  RiBlueskyFill,
+  RiGithubFill,
+  RiLinkedinBoxFill,
+  RiMastodonFill,
+  RiTwitterFill,
+} from '@remixicon/react'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -60,23 +66,48 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’m Loïc Poullain, a software engineer based in Lyon in France. I’m the creator of <a href="https://foalts.org/">FoalTS</a>, a full-featured Node.js framework for building web applications.
+                I’m Loïc Poullain, a software engineer based in Lyon in France.
+                I’m the creator of <a href="https://foalts.org/">FoalTS</a>, a
+                full-featured Node.js framework for building web applications.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.com/Loic_Poullain" icon={RiTwitterFill}>
+              <SocialLink
+                href="https://twitter.com/Loic_Poullain"
+                icon={RiTwitterFill}
+              >
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="https://github.com/LoicPoullain" icon={RiGithubFill} className="mt-4">
+              <SocialLink
+                href="https://github.com/LoicPoullain"
+                icon={RiGithubFill}
+                className="mt-4"
+              >
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com/in/loicpoullain/" icon={RiLinkedinBoxFill} className="mt-4">
+              <SocialLink
+                href="https://www.linkedin.com/in/loicpoullain/"
+                icon={RiLinkedinBoxFill}
+                className="mt-4"
+              >
                 Follow on LinkedIn
               </SocialLink>
-              <SocialLink href="https://bsky.app/profile/loicpoullain.bsky.social" icon={RiBlueskyFill} className="mt-4">
+              <SocialLink
+                href="https://bsky.app/profile/loicpoullain.com"
+                icon={RiBlueskyFill}
+                className="mt-4"
+              >
                 Follow on Bluesky
+              </SocialLink>
+              <SocialLink
+                rel="me"
+                href="https://mastodon.social/@LoicPoullain"
+                icon={RiMastodonFill}
+                className="mt-4"
+              >
+                Follow on Mastodon
               </SocialLink>
             </ul>
           </div>

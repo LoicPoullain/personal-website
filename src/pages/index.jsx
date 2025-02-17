@@ -16,7 +16,13 @@ import logoLinito from '@/images/logos/linito.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
-import { RiBlueskyFill, RiGithubFill, RiLinkedinBoxFill, RiTwitterFill } from '@remixicon/react'
+import {
+  RiBlueskyFill,
+  RiGithubFill,
+  RiLinkedinBoxFill,
+  RiMastodonFill,
+  RiTwitterFill,
+} from '@remixicon/react'
 
 function BriefcaseIcon(props) {
   return (
@@ -276,9 +282,15 @@ export default function Home({ articles }) {
               icon={RiLinkedinBoxFill}
             />
             <SocialLink
-              href="https://bsky.app/profile/loicpoullain.bsky.social"
+              href="https://bsky.app/profile/loicpoullain.com"
               aria-label="Follow on Bluesky"
               icon={RiBlueskyFill}
+            />
+            <SocialLink
+              rel="me"
+              href="https://mastodon.social/@LoicPoullain"
+              aria-label="Follow on Mastodon"
+              icon={RiMastodonFill}
             />
           </div>
         </div>

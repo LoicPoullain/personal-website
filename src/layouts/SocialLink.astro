@@ -1,0 +1,16 @@
+---
+interface Props {
+  href: string;
+  name: string;
+}
+
+const { href, name } = Astro.props;
+---
+
+<a
+  href={href}
+  aria-label=`Follow on ${name}`
+  class="text-zinc-500 transition hover:text-yellow-600 h-6 w-6"
+>
+  <slot />
+</a>

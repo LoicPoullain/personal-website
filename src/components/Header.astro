@@ -1,0 +1,106 @@
+---
+import NavLink from "./NavLink.astro";
+import Container from "../layouts/Container.astro";
+
+const pages: { href: string, label: string }[] = [
+  { href: "/software-engineering", label: "Software engineering" },
+  { href: "/entrepreneurship", label: "Entrepreneurship" },
+  // { href: "/essays-and-documentaries", label: "Essays & documentaries" },
+];
+
+const languages: { href: string, label: string }[] = [
+  { href: '#', label: "🇬🇧" },
+  { href: '#', label: "🇫🇷" },
+];
+---
+
+<Container>
+  <header class="flex items-center py-8 sm:py-16">
+    <strong class="font-semibold tracking-wide text-zinc-800">
+      <a href="/">Loïc Poullain</a>
+    </strong>
+    <div class="grow"></div>
+    <div class="hidden lg:flex items-center space-x-8">
+      <nav>
+        <ul class="flex space-x-8 text-center">
+          {pages.map((page) => (
+            <li>
+              <NavLink href={page.href} label={page.label} />
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <!-- <div class="relative">
+        <button id="language-menu-toggle" class="text-zinc-800 cursor-pointer" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu" aria-label="Language menu">🇬🇧</button>
+        <div id="language-menu" role="menu" aria-labelledby="language-menu-toggle" class="absolute -right-3 pt-3 z-10 hidden">
+          <ul class="shadow-lg bg-white ring-1 ring-zinc-100">
+            {languages.map(language => (
+              <li role="none">
+                <a href={language.href} role="menuitem" class="block px-4 py-2 text-sm text-zinc-800 hover:bg-zinc-100">{language.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div> -->
+    </div>
+    <div class="lg:hidden relative text-right">
+      <button id="menu-toggle" class="text-zinc-800 cursor-pointer" aria-haspopup="true" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+      <div id="menu" role="menu" aria-labelledby="language-menu-toggle" class="absolute right-0 pt-3 z-10 hidden w-48">
+        <nav>
+          <ul class="text-left bg-white ring-1 ring-zinc-100">
+            {pages.map((page) => (
+              <li role="none">
+                <a href={page.href} role="menuitem" class="block px-4 py-4 text-sm text-zinc-800 hover:bg-zinc-100">{page.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <!-- <ul class="shadow-lg flex justify-center bg-white ring-1 ring-zinc-100 py-1">
+          {languages.map(language => (
+            <li role="none">
+              <a href={language.href} role="menuitem" class="block px-4 py-2 text-sm text-zinc-800 hover:bg-zinc-100">{language.label}</a>
+            </li>
+          ))}
+        </ul> -->
+      </div>
+    </div>
+  </header>
+</Container>
+
+<script>
+  // const languageMenuToggle = document.getElementById('language-menu-toggle')!;
+  // const languageMenu = document.getElementById('language-menu')!;
+
+  // languageMenuToggle.addEventListener('click', () => {
+  //   const isOpen = languageMenu.classList.toggle('hidden');
+  //   languageMenuToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  // });
+
+  // // Hide the language menu when clicking outside
+  // document.addEventListener('click', (event) => {
+  //   if (!languageMenu.contains(event.target as any) && !languageMenuToggle.contains(event.target as any)) {
+  //     languageMenu.classList.add('hidden');
+  //     languageMenuToggle.setAttribute('aria-expanded', 'false');
+  //   }
+  // });
+
+  const menuToggle = document.getElementById('menu-toggle')!;
+  const menu = document.getElementById('menu')!;
+
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('hidden');
+    menuToggle.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+
+  // Hide the main menu when clicking outside
+  document.addEventListener('click', (event) => {
+    if (!menu.contains(event.target as any) && !menuToggle.contains(event.target as any)) {
+      menu.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

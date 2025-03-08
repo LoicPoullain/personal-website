@@ -1,0 +1,142 @@
+---
+import LinkCard from "../components/cards/LinkCard.astro";
+import NewsLetterCard from "../components/cards/NewsLetterCard.astro";
+import OrganizationListCard from "../components/cards/OrganizationListCard.astro";
+import TopicPage from "../layouts/TopicPage.astro";
+import TopicPageFirstColumn from "../layouts/TopicPageFirstColumn.astro";
+import TopicPageSecondColumn from "../layouts/TopicPageSecondColumn.astro";
+import TopicSection from "../layouts/TopicSection.astro";
+import linitoLogo from "./assets/logos/linito.png";
+import foalLogo from "./assets/logos/foal.png";
+import indyLogo from "./assets/logos/indy.jpg";
+import assembleeNationaleLogo from "./assets/logos/assemblee_nationale.jpg";
+import centraleSupelecLogo from "./assets/logos/centralesupelec.jpg";
+import dassaultSystemesLogo from "./assets/logos/dassault_systemes.jpg";
+import datadogLogo from "./assets/logos/datadog.jpg";
+import { formatAndSortArticles } from "../utils/format-and-sort-articles";
+
+const articles = formatAndSortArticles(import.meta.glob('./software-engineering/articles/*.md', { eager: true }));
+---
+
+<TopicPage
+  title="Software engineering"
+  description="My open source contributions, my articles and conferences on software engineering as well as my resume."
+>
+  <TopicPageFirstColumn>
+    <TopicSection title="Open source">
+      <LinkCard
+        title="FoalTS"
+        description="Node.js framework for creating web applications"
+        url="https://foalts.org"
+        linkText="foalts.org"
+        isFullProject />
+    </TopicSection>
+    <TopicSection title="Articles">
+      {articles.map(article => (
+        <LinkCard 
+          title={article.title}
+          description={article.description}
+          url={article.url}
+          date={article.pubDate}
+          linkText="Read article"
+        />
+      ))}
+    </TopicSection>
+    <TopicSection title="Speaking">
+      <LinkCard
+        title="A long trip in open source development"
+        description="After four years of developing an open source framework, FoalTS, I share with you the challenges I faced."
+        url="https://www.youtube.com/watch?v=HNOKdQqrs9U"
+        date="2022-07-01"
+        linkText="Watch video (FR)"
+      />
+      <LinkCard
+        title="Some misconceptions about authentication"
+        description="It is common to oppose sessions and cookies on the one hand and the use of a JWT and a header on the other. We will come back to this idea here."
+        url="https://www.youtube.com/watch?v=r4S56IPtJOM"
+        date="2022-06-29"
+        linkText="Watch video (FR)"
+      />
+    </TopicSection>
+  </TopicPageFirstColumn>
+  <TopicPageSecondColumn>
+    <!-- <NewsLetterCard topic="software engineering"/> -->
+    <OrganizationListCard
+      title="Work"
+      organizations={[
+        {
+          name: "Linito",
+          role: "Founder",
+          startDate: "2024",
+          endDate: "Present",
+          url: "https://www.linito.io/",
+          image: linitoLogo
+        },
+        {
+          name: "FoalTS",
+          role: "Open Source Backend Engineer",
+          startDate: "2018",
+          endDate: "Present",
+          url: "https://foalts.org",
+          image: foalLogo
+        },
+        {
+          name: "Indy",
+          role: "Full-Stack Software Engineer",
+          startDate: "2021",
+          endDate: "2023",
+          url: "https://www.indy.fr",
+          image: indyLogo
+        },
+        {
+          name: "French Parliament",
+          role: "Frontend Software Engineer",
+          startDate: "2020",
+          endDate: "2020",
+          url: "https://www.assemblee-nationale.fr/",
+          image: assembleeNationaleLogo
+        },
+        {
+          name: "CentraleSupélec, Paris-Saclay University",
+          role: "Professor in Software Engineering",
+          startDate: "2018",
+          endDate: "2021",
+          url: "https://www.centralesupelec.fr/",
+          image: centraleSupelecLogo
+        },
+        {
+          name: "Dassault Systèmes",
+          role: "Frontend Engineer Intern",
+          startDate: "2017",
+          endDate: "2017",
+          url: "https://www.3ds.com/",
+          image: dassaultSystemesLogo
+        },
+        {
+          name: "Datadog",
+          role: "Software Engineer Intern",
+          startDate: "2016",
+          endDate: "2017",
+          url: "https://www.datadoghq.com/",
+          image: datadogLogo
+        }
+      ]}
+      type="work"
+      showLinkedIn
+    />
+    <OrganizationListCard
+      title="Education"
+      organizations={[
+        {
+          name: 'CentraleSupélec, Paris-Saclay University',
+          role: 'BsC & MsC, Computer Science',
+          startDate: '2014',
+          endDate: '2018',
+          url: 'https://www.centralesupelec.fr/',
+          image: centraleSupelecLogo
+        }
+      ]}
+      type="education"
+    />
+  </TopicPageSecondColumn>
+</TopicPage>

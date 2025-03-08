@@ -1,0 +1,13 @@
+---
+interface Props {
+  href: string;
+  label: string;
+}
+
+const currentPath = Astro.url.pathname;
+const { href, label } = Astro.props;
+---
+
+<a href={href} class={"hover:text-yellow-600 hover:underline underline-offset-8 decoration-2 " + (currentPath.includes(href) ? "text-yellow-600 underline" : "text-zinc-800")}>
+  {label}
+</a>

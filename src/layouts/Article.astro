@@ -1,0 +1,30 @@
+---
+import { formatDate } from "../utils/format-date";
+import Container from "./Container.astro";
+import Layout from "./Layout.astro";
+
+interface Props {
+  frontmatter: {
+    pubDate: string;
+    title: string;
+    description: string;
+  }
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <Container>
+    <time datetime={frontmatter.pubDate} class="max-w-2xl mx-auto block text-sm text-center text-zinc-400 pb-6">{formatDate(frontmatter.pubDate)}</time>
+    <article class="max-w-2xl mx-auto prose
+    text-zinc-600
+      prose-h1:font-bold prose-h1:font-serif prose-h1:tracking-wide prose-h1:text-zinc-800 prose-h1:text-4xl prose-h1:text-center
+      prose-code:before:content-none prose-code:after:content-none
+      prose-a:underline-offset-4 prose-a:text-inherit prose-a:font-light prose-a:hover:no-underline prose-a:hover:text-yellow-600
+      leading-7
+      font-light">
+      <slot />
+    </article>
+  </Container>
+</Layout>

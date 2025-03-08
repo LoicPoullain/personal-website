@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Container from "../layouts/Container.astro";
+import LinkCard from '../components/cards/LinkCard.astro';
+
+const title = "Software engineer and entrepreneur";
+const description = "Hello and welcome to my personal website. I'm Loïc, a software engineer and entrepreneur, and I write articles and produce content on various subjects, particularly software engineering.";
+---
+
+<Layout title={'Loïc Poullain - ' + title} description={description}>
+	<Hero
+		title={title}
+		description={description}
+	/>
+	<Container>
+		<section
+			class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-2"
+		>
+			<LinkCard
+				title="Software engineering"
+				description="My open source contributions, my articles and conferences on software engineering as well as my resume."
+				url="/software-engineering"
+				linkText="Read more"
+				isBigLink
+			/>
+			<LinkCard
+				title="Entrepreneurship"
+				description="My company and some testimonials and thoughts on my entrepreneurial journey."
+				url="/entrepreneurship"
+				linkText="Read more"
+				isBigLink
+			/>
+			<!-- <LinkCard
+				title="Essays and documentaries"
+				description="Articles and documentaries that I made on various subjects that I find interesting."
+				url="/essays-and-documentaries"
+				linkText="Read more"
+				isBigLink
+			/> -->
+		</section>
+	</Container>
+</Layout>

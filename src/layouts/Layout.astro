@@ -1,0 +1,51 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+
+const trackingId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID;
+---
+
+<!doctype html>
+<html lang="en" class="h-full">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		{trackingId && (
+			<>
+				<script async src={`https://www.googletagmanager.com/gtag/js?id=${trackingId}`}></script>
+				<script define:vars={{ trackingId }}>
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+
+					gtag('config', trackingId);
+				</script>
+			</>
+		)}
+	</head>
+	<body class="bg-zinc-50 h-full sm:px-8">
+		<div class="max-w-7xl mx-auto lg:px-8">
+			<div class="bg-white ring-1 ring-zinc-100">
+				<Header />
+				<main>
+					<slot />
+				</main>
+				<div class="mt-24 sm:mt-32 border-t border-zinc-100">
+					<Footer />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -7,12 +7,12 @@ import TopicPageSecondColumn from "../layouts/TopicPageSecondColumn.astro";
 import TopicSection from "../layouts/TopicSection.astro";
 import { formatAndSortArticles } from "../utils/format-and-sort-articles";
 
-const articles = formatAndSortArticles(import.meta.glob('./essays-and-documentaries/articles/*.md', { eager: true }));
+const articles = formatAndSortArticles(import.meta.glob('./documentaries/articles/*.md', { eager: true }));
 ---
 
 <TopicPage
-  title="Essays and documentaries"
-  description="Articles and documentaries that I made on various subjects that I find interesting."
+  title="Documentaries"
+  description="Documentaries that I made on various subjects that I find interesting."
 >
   <TopicPageFirstColumn>
     <TopicSection title="Articles">

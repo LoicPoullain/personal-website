@@ -5,7 +5,7 @@ import Container from "../layouts/Container.astro";
 import LinkCard from '../components/cards/LinkCard.astro';
 
 const title = "Software engineer and entrepreneur";
-const description = "Hello and welcome to my personal website. I'm Loïc, a software engineer and entrepreneur, and I write articles and produce content on various subjects, particularly software engineering.";
+const description = "Hello and welcome to my personal website. I'm Loïc, a software engineer and entrepreneur, and I write articles and produce content on various subjects, particularly software engineering and astronomy.";
 ---
 
 <Layout title={'Loïc Poullain - ' + title} description={description}>
@@ -15,7 +15,7 @@ const description = "Hello and welcome to my personal website. I'm Loïc, a soft
 	/>
 	<Container>
 		<section
-			class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-2"
+			class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
 		>
 			<LinkCard
 				title="Software engineering"
@@ -31,13 +31,13 @@ const description = "Hello and welcome to my personal website. I'm Loïc, a soft
 				linkText="Read more"
 				isBigLink
 			/>
-			<!-- <LinkCard
-				title="Documentaries"
-				description="Documentaries that I made on various subjects that I find interesting."
+			<LinkCard
+				title="Documentaries (FR)"
+				description="Documentaries I've made on various subjects that interest me, especially astronomy."
 				url="/documentaries"
 				linkText="See more"
 				isBigLink
-			/> -->
+			/>
 		</section>
 	</Container>
 </Layout>

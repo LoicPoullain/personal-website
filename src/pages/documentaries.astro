@@ -1,0 +1,33 @@
+---
+import TopicPage from "../layouts/TopicPage.astro";
+import TopicPageFirstColumn from "../layouts/TopicPageFirstColumn.astro";
+import TopicPageSecondColumn from "../layouts/TopicPageSecondColumn.astro";
+import TopicSection from "../layouts/TopicSection.astro";
+---
+
+<TopicPage
+  title="Documentaries"
+  description="Documentaries I've made on various subjects that interest me, especially astronomy."
+>
+  <TopicPageFirstColumn>
+    <TopicSection title="Videos">
+      <div class="space-y-4">
+        <h3 class="text-base font-semibold tracking-tight text-zinc-800">
+          Journey through our solar system (FR)
+        </h3>
+        <iframe
+          class="rounded-2xl w-full aspect-video"
+          src="https://www.youtube.com/embed/uwOcZ3jlMQ0?si=4D7Ob5b5I7nxGllI"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </TopicSection>
+  </TopicPageFirstColumn>
+  <TopicPageSecondColumn>
+    <!-- <NewsLetterCard topic="various subjects" /> -->
+  </TopicPageSecondColumn>
+</TopicPage>

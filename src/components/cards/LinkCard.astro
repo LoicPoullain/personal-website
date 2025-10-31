@@ -17,6 +17,14 @@ const isExternalLink = url.startsWith('http');
 ---
 
 <div class="group relative flex flex-col items-start">
+  {date && (
+    <time
+      class="relative z-10 order-first mb-2 text-xs text-zinc-400"
+      datetime={formatDate(date)}
+    >
+      {formatDate(date)}
+    </time>
+  )}
   {isBigLink ? (
     <h2
       class="text-base font-semibold tracking-tight text-zinc-800"
@@ -45,22 +53,6 @@ const isExternalLink = url.startsWith('http');
         <span class="relative z-10">{title}</span>
       </a>
     </h3>
-  )}
-  {date && (
-    <time
-      class="relative z-10 order-first mb-3 flex items-center text-sm text-zinc-400 pl-3.5"
-      datetime={formatDate(date)}
-    >
-      <span
-        class="absolute inset-y-0 left-0 flex items-center"
-        aria-hidden="true"
-      >
-        <span
-          class="h-4 w-0.5 rounded-full bg-zinc-200"
-        />
-      </span>
-      {formatDate(date)}
-    </time>
   )}
   <p class="relative z-10 mt-2 text-sm text-zinc-600">
     {description}

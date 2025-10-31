@@ -37,9 +37,9 @@ const trackingId = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID;
 	</head>
 	<body class="bg-zinc-50 h-full sm:px-8">
 		<div class="max-w-7xl mx-auto lg:px-8">
-			<div class="bg-white ring-1 ring-zinc-100">
+			<div class="bg-white ring-1 ring-zinc-100 min-h-screen flex flex-col">
 				<Header />
-				<main>
+				<main class="flex-1">
 					<slot />
 				</main>
 				<div class="mt-24 sm:mt-32 border-t border-zinc-100">

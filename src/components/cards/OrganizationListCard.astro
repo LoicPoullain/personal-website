@@ -33,7 +33,7 @@ const { title, organizations, type, showLinkedIn } = Astro.props;
           <dd
             class="w-full flex-none text-sm font-medium text-zinc-900"
           >
-            <a href={org.url}>{org.name}</a>
+            <a href={org.url} rel="nofollow">{org.name}</a>
           </dd>
           <dt class="sr-only">{type === 'work' ? 'Role' : 'Degree'}</dt>
           <dd class="text-xs text-zinc-500">{org.role}</dd>

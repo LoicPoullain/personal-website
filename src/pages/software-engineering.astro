@@ -7,7 +7,8 @@ import TopicPageFirstColumn from "../layouts/TopicPageFirstColumn.astro";
 import TopicPageSecondColumn from "../layouts/TopicPageSecondColumn.astro";
 import TopicSection from "../layouts/TopicSection.astro";
 import linitoLogo from "./assets/logos/linito.png";
-import foalLogo from "./assets/logos/foal.png";
+import findymailLogo from "./assets/logos/findymail.jpg";
+import makipeopleLogo from "./assets/logos/makipeople.jpg";
 import indyLogo from "./assets/logos/indy.jpg";
 import assembleeNationaleLogo from "./assets/logos/assemblee_nationale.jpg";
 import centraleSupelecLogo from "./assets/logos/centralesupelec.jpg";
@@ -65,20 +66,28 @@ const articles = formatAndSortArticles(import.meta.glob('./software-engineering/
       title="Work"
       organizations={[
         {
+          name: "Maki People",
+          role: "Backend Software Engineer",
+          startDate: "2025",
+          endDate: "Present",
+          url: "https://www.makipeople.com/",
+          image: makipeopleLogo
+        },
+        {
+          name: "Findymail",
+          role: "Frontend Software Engineer",
+          startDate: "2025",
+          endDate: "2025",
+          url: "https://www.findymail.com/",
+          image: findymailLogo
+        },
+        {
           name: "Linito",
           role: "Founder",
           startDate: "2024",
           endDate: "2025",
           url: "#",
           image: linitoLogo
-        },
-        {
-          name: "FoalTS",
-          role: "Open Source Backend Engineer",
-          startDate: "2018",
-          endDate: "Present",
-          url: "https://foalts.org",
-          image: foalLogo
         },
         {
           name: "Indy",

@@ -14,9 +14,10 @@ interface Props {
   }[]
   type: 'work' | 'education';
   showLinkedIn?: boolean;
+  noFollow?: boolean;
 }
 
-const { title, organizations, type, showLinkedIn } = Astro.props;
+const { title, organizations, type, showLinkedIn, noFollow } = Astro.props;
 ---
 
 <SideCard title={title} icon={type === 'work' ? 'briefcase' : 'academic-cap'}>
@@ -33,7 +34,7 @@ const { title, organizations, type, showLinkedIn } = Astro.props;
           <dd
             class="w-full flex-none text-sm font-medium text-zinc-900"
           >
-            <a href={org.url} rel="nofollow">{org.name}</a>
+            <a href={org.url} rel={noFollow ? "nofollow" : undefined}>{org.name}</a>
           </dd>
           <dt class="sr-only">{type === 'work' ? 'Role' : 'Degree'}</dt>
           <dd class="text-xs text-zinc-500">{org.role}</dd>

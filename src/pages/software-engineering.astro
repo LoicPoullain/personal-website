@@ -10,6 +10,7 @@ import linitoLogo from "./assets/logos/linito.png";
 import findymailLogo from "./assets/logos/findymail.jpg";
 import makipeopleLogo from "./assets/logos/makipeople.jpg";
 import indyLogo from "./assets/logos/indy.jpg";
+import foalLogo from "./assets/logos/foal.png";
 import assembleeNationaleLogo from "./assets/logos/assemblee_nationale.jpg";
 import centraleSupelecLogo from "./assets/logos/centralesupelec.jpg";
 import dassaultSystemesLogo from "./assets/logos/dassault_systemes.jpg";
@@ -24,14 +25,6 @@ const articles = formatAndSortArticles(import.meta.glob('./software-engineering/
   description="My open source contributions, my articles and conferences on software engineering as well as my resume."
 >
   <TopicPageFirstColumn>
-    <TopicSection title="Open source">
-      <LinkCard
-        title="FoalTS"
-        description="Node.js framework for creating web applications"
-        url="https://foalts.org"
-        linkText="foalts.org"
-        isFullProject />
-    </TopicSection>
     <TopicSection title="Articles">
       {articles.map(article => (
         <LinkCard 
@@ -62,6 +55,20 @@ const articles = formatAndSortArticles(import.meta.glob('./software-engineering/
   </TopicPageFirstColumn>
   <TopicPageSecondColumn>
     <!-- <NewsLetterCard topic="software engineering"/> -->
+    <OrganizationListCard
+      title="Open Source"
+      organizations={[
+        {
+          name: "FoalTS",
+          role: "Creator & Maintainer",
+          startDate: "2018",
+          endDate: "Present",
+          url: "https://foalts.org",
+          image: foalLogo
+        },
+      ]}
+      type="work" 
+    />
     <OrganizationListCard
       title="Work"
       organizations={[
@@ -132,6 +139,7 @@ const articles = formatAndSortArticles(import.meta.glob('./software-engineering/
       ]}
       type="work"
       showLinkedIn
+      noFollow
     />
     <OrganizationListCard
       title="Education"

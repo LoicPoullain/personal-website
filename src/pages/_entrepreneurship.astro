@@ -2,10 +2,8 @@
 import NewsLetterCard from "../components/cards/NewsLetterCard.astro";
 import TopicPage from "../layouts/TopicPage.astro";
 import TopicSection from "../layouts/TopicSection.astro";
-import OrganizationListCard from "../components/cards/OrganizationListCard.astro";
 import TopicPageFirstColumn from "../layouts/TopicPageFirstColumn.astro";
 import TopicPageSecondColumn from "../layouts/TopicPageSecondColumn.astro";
-import linitoLogo from "./assets/logos/linito.png";
 import LinkCard from "../components/cards/LinkCard.astro";
 import { formatAndSortArticles } from "../utils/format-and-sort-articles";
 
@@ -32,19 +30,5 @@ const articles = formatAndSortArticles(import.meta.glob('./entrepreneurship/arti
   </TopicPageFirstColumn>
   <TopicPageSecondColumn>
     <NewsLetterCard category="entrepreneurship" />
-    <OrganizationListCard
-      title="Companies"
-      organizations={[
-        {
-          name: "Linito",
-          role: "Founder",
-          startDate: "2024",
-          endDate: "Present",
-          url: "https://www.linito.io/",
-          image: linitoLogo,
-        },
-      ]}
-      type="work"
-    />
   </TopicPageSecondColumn>
 </TopicPage>

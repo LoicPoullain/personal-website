@@ -1,5 +1,6 @@
 ---
 import SideCard from '../../layouts/SideCard.astro';
+import TechNewsletterForm from '../newsletters/TechNewsletterForm.astro';
 
 interface Props {
   topic: string;
@@ -12,19 +13,7 @@ const { topic } = Astro.props;
   <p class="mt-2 text-sm text-zinc-600">
     Get notified when I publish something new about <span class="font-semibold">{topic}</span>. You can unsubscribe at any time.
   </p>
-  <form action="/thank-you" class="mt-6 flex">
-    <input
-      placeholder="Email address"
-      aria-label="Email address"
-      required
-      class="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(--spacing(2)-1px)] shadow shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-yellow-500 focus:ring-4 focus:ring-yellow-500/10 focus:outline-hidden sm:text-sm"
-      type="email"
-    />
-    <button
-      class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 ml-4 flex-none"
-      type="submit"
-    >
-      Join
-    </button>
-  </form>
+  <div class="mt-6">
+    <TechNewsletterForm buttonText="Join" />
+  </div>
 </SideCard>

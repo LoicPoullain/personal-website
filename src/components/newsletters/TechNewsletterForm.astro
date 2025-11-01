@@ -1,0 +1,94 @@
+---
+interface Props {
+  buttonText: string;
+}
+
+const { buttonText } = Astro.props;
+---
+
+<!-- Begin Brevo Form -->
+<!-- START - We recommend to place the below code in head tag of your website html  -->
+<style>
+  .sib-form-message-panel {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  </style>
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+<!--  END - We recommend to place the above code in head tag of your website html -->
+
+<!-- START - We recommend to place the below code where you want the form in your website html  -->
+<div id="sib-form-container" class="sib-form-container">
+  <form id="sib-form" method="POST" class="flex" action="https://e3aa0dc4.sibforms.com/serve/MUIFAGbtuRpG9N0_-yv7QTOTP0fgTTISlYBm2ccl9k6HYbRCvt3TSOM_MwWizsQl8AgB6AdemdtR2HwRLbhbo6WjP-tRmFYvFxGoaycVAPff67EzOBcmdgPxhSWQFAJ84wJGSk_WkQ5PMo1n1f5ghID8MAd8EmIX4tJi6RYOUdHfili0IBJkmSyXlfwJFiKyoBaCzDnJgumJKqvwkw==" data-type="subscription">
+    <div class="sib-input flex-auto">
+      <div class="form__entry entry_block">
+        <div class="form__label-row ">
+          <div class="entry__field">
+            <input
+              type="email"
+              placeholder="Email address"
+              aria-label="Email address"
+              required
+              class="input min-w-0 appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(--spacing(2)-1px)] shadow shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-yellow-500 focus:ring-4 focus:ring-yellow-500/10 focus:outline-hidden sm:text-sm"
+              id="EMAIL"
+              name="EMAIL"
+              data-required="true"
+            />
+          </div>
+        </div>
+        <label class="entry__error entry__error--primary text-red-700 text-sm pt-2">
+        </label>
+      </div>
+    </div>
+    <div>
+    <button
+      form="sib-form" 
+      class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800 font-semibold text-zinc-100 hover:bg-zinc-700 active:bg-zinc-800 active:text-zinc-100/70 flex-none"
+      type="submit"
+    >
+      <span class="hidden">
+        <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
+          <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+        </svg>
+      </span>
+      {buttonText}
+    </button>
+    </div>
+    <input type="text" name="email_address_check" value="" class="input--hidden">
+    <input type="hidden" name="locale" value="en">
+  </form>
+  <div id="error-message" class="sib-form-message-panel text-red-700 text-sm">
+    Your subscription could not be saved. Please try again.
+  </div>
+  <div id="success-message" class="sib-form-message-panel text-emerald-600 text-sm">
+    Your subscription has been successful.
+  </div>
+</div>
+<!-- END - We recommend to place the above code where you want the form in your website html  -->
+
+<!-- START - We recommend to place the below code in footer or bottom of your website html  -->
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+  window.LOCALE = 'en';
+  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+  window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
+
+  window.GENERIC_INVALID_MESSAGE = "The information provided is invalid. Please review the field format and try again.";
+
+  window.translation = {
+    common: {
+      selectedList: '{quantity} list selected',
+      selectedLists: '{quantity} lists selected',
+      selectedOption: '{quantity} selected',
+      selectedOptions: '{quantity} selected',
+    }
+  };
+
+  var AUTOHIDE = Boolean(0);
+</script>
+
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<!-- END - We recommend to place the above code in footer or bottom of your website html  -->
+<!-- End Brevo Form -->

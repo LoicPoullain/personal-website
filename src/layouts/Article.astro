@@ -19,6 +19,9 @@ interface Props {
 }
 
 const { frontmatter } = Astro.props;
+
+const site = Astro.site;
+const fullUrl = new URL(Astro.url.pathname, site).href;
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -36,37 +39,37 @@ const { frontmatter } = Astro.props;
       <h3 class="text-lg font-semibold text-zinc-800 mb-4 text-center">Share this article</h3>
       <div class="flex justify-center gap-4">
         <SocialLink 
-          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(Astro.url.href)}`}
+          href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(frontmatter.title)}&url=${encodeURIComponent(fullUrl)}`}
           name="Share on Twitter"
         >
           <TwitterLogo />
         </SocialLink>
         <SocialLink 
-          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`}
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(fullUrl)}`}
           name="Share on LinkedIn"
         >
           <LinkedInLogo />
         </SocialLink>
         <SocialLink 
-          href={`https://bsky.app/intent/compose?text=${encodeURIComponent(frontmatter.title + ' ' + Astro.url.href)}`}
+          href={`https://bsky.app/intent/compose?text=${encodeURIComponent(frontmatter.title + ' ' + fullUrl)}`}
           name="Share on Bluesky"
         >
           <BlueskyLogo />
         </SocialLink>
         <SocialLink 
-          href={`mailto:?subject=${encodeURIComponent(frontmatter.title)}&body=${encodeURIComponent(`Check out this article: ${frontmatter.title} - ${Astro.url.href}`)}`}
+          href={`mailto:?subject=${encodeURIComponent(frontmatter.title)}&body=${encodeURIComponent(`Check out this article: ${frontmatter.title} - ${fullUrl}`)}`}
           name="Share by Email"
         >
           <EmailLogo />
         </SocialLink>
         <SocialLink 
-          href={`https://wa.me/?text=${encodeURIComponent(`${frontmatter.title} - ${Astro.url.href}`)}`}
+          href={`https://wa.me/?text=${encodeURIComponent(`${frontmatter.title} - ${fullUrl}`)}`}
           name="Share on WhatsApp"
         >
           <WhatsAppLogo />
         </SocialLink>
         <SocialLink 
-          href={`https://t.me/share/url?url=${encodeURIComponent(Astro.url.href)}&text=${encodeURIComponent(frontmatter.title)}`}
+          href={`https://t.me/share/url?url=${encodeURIComponent(fullUrl)}&text=${encodeURIComponent(frontmatter.title)}`}
           name="Share on Telegram"
         >
           <TelegramLogo />

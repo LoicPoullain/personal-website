@@ -3,6 +3,7 @@ layout: ../../../layouts/Article.astro
 pubDate: 2022-10-13
 title: How to securely store passwords in a database?
 description: "Passwords must never be stored in clear text in the database. If they were, attackers would be able to steal them if the database ever gets compromised. To avoid this, two actions are necessary to store a password securely: hashing and salting."
+category: software-engineering
 ---
 
 # How to securely store passwords in a database?

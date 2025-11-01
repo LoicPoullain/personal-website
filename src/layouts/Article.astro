@@ -16,6 +16,7 @@ interface Props {
     pubDate: string;
     title: string;
     description: string;
+    category: 'software-engineering' | 'entrepreneurship';
   }
 }
 
@@ -77,14 +78,16 @@ const fullUrl = new URL(Astro.url.pathname, site).href;
         </SocialLink>
       </div>
     </section>
-    <section class="max-w-2xl mx-auto mt-12">
-      <div class="bg-zinc-50 rounded-lg p-6 shadow-sm">
-        <h3 class="text-lg font-semibold text-zinc-800 mb-2">Stay up to date</h3>
-        <p class="text-sm text-zinc-600 mb-4">
-          Get notified when I publish something new. You can unsubscribe at any time.
-        </p>
-        <TechNewsletterForm buttonText="Subscribe" />
-      </div>
-    </section>
+    {frontmatter.category === 'software-engineering' && (
+      <section class="max-w-2xl mx-auto mt-12">
+        <div class="bg-zinc-50 rounded-lg p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-zinc-800 mb-2">Stay up to date</h3>
+          <p class="text-sm text-zinc-600 mb-4">
+            Get notified when I publish something new. You can unsubscribe at any time.
+          </p>
+          <TechNewsletterForm buttonText="Subscribe" />
+        </div>
+      </section>
+    )}
   </Container>
 </Layout>

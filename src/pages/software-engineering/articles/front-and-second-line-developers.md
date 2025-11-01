@@ -3,6 +3,7 @@ layout: ../../../layouts/Article.astro
 pubDate: 2023-03-29
 title: Front and second line developers
 description: In working with different software engineers, I've noticed that there are generally two types of developers.
+category: software-engineering
 ---
 
 # Front and second line developers

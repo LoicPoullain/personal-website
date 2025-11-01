@@ -3,17 +3,21 @@ import SideCard from '../../layouts/SideCard.astro';
 import TechNewsletterForm from '../newsletters/TechNewsletterForm.astro';
 
 interface Props {
-  topic: string;
+  category: 'software-engineering' | 'entrepreneurship';
 }
 
-const { topic } = Astro.props;
+const { category } = Astro.props;
+
+const topic = category === 'software-engineering' ? 'software engineering' : 'entrepreneurship';
 ---
 
-<SideCard title="Stay up to date" icon="letter">
-  <p class="mt-2 text-sm text-zinc-600">
-    Get notified when I publish something new about <span class="font-semibold">{topic}</span>. You can unsubscribe at any time.
-  </p>
-  <div class="mt-6">
-    <TechNewsletterForm buttonText="Join" />
-  </div>
-</SideCard>
+{category === 'software-engineering' && (
+  <SideCard title="Stay up to date" icon="letter">
+    <p class="mt-2 text-sm text-zinc-600">
+      Get notified when I publish something new about <span class="font-semibold">{topic}</span>. You can unsubscribe at any time.
+    </p>
+    <div class="mt-6">
+      <TechNewsletterForm buttonText="Join" />
+    </div>
+  </SideCard>
+)}

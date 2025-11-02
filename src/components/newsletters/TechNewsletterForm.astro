@@ -5,6 +5,10 @@ interface Props {
 }
 
 const { buttonText, category } = Astro.props;
+
+const actionUrl = category === 'software-engineering' ?
+  'https://e3aa0dc4.sibforms.com/serve/MUIFAGbtuRpG9N0_-yv7QTOTP0fgTTISlYBm2ccl9k6HYbRCvt3TSOM_MwWizsQl8AgB6AdemdtR2HwRLbhbo6WjP-tRmFYvFxGoaycVAPff67EzOBcmdgPxhSWQFAJ84wJGSk_WkQ5PMo1n1f5ghID8MAd8EmIX4tJi6RYOUdHfili0IBJkmSyXlfwJFiKyoBaCzDnJgumJKqvwkw==' :
+  'https://e3aa0dc4.sibforms.com/serve/MUIFAOZHyfi6aS7wX8rrhya9HuLu1ABVxdREdiFnrgFpsz7k6Gsej6oTcENjaT8KO5qrDl-rYP1HL30uVQAHe8itFo5rACWouju_vMBehf0BqcrgycEivV7JMn4G65irvPmO4Uhn0q3ZixzNNPBWpONu2Bn_ld1ZvtqFVVCD3vskieyROpQO0nidw0ne8zGLXClRlW3EIE7EONhM3w=='
 ---
 
 <!-- Begin Brevo Form -->
@@ -21,7 +25,7 @@ const { buttonText, category } = Astro.props;
 
 <!-- START - We recommend to place the below code where you want the form in your website html  -->
 <div id="sib-form-container" class="sib-form-container">
-  <form id="sib-form" method="POST" class="flex" action="https://e3aa0dc4.sibforms.com/serve/MUIFAGbtuRpG9N0_-yv7QTOTP0fgTTISlYBm2ccl9k6HYbRCvt3TSOM_MwWizsQl8AgB6AdemdtR2HwRLbhbo6WjP-tRmFYvFxGoaycVAPff67EzOBcmdgPxhSWQFAJ84wJGSk_WkQ5PMo1n1f5ghID8MAd8EmIX4tJi6RYOUdHfili0IBJkmSyXlfwJFiKyoBaCzDnJgumJKqvwkw==" data-type="subscription">
+  <form id="sib-form" method="POST" class="flex" action={actionUrl} data-type="subscription">
     <div class="sib-input flex-auto">
       <div class="form__entry entry_block">
         <div class="form__label-row ">

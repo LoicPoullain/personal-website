@@ -25,7 +25,7 @@ const articles = formatAndSortArticles(import.meta.glob('./entrepreneurship/arti
           linkText="Read article"
         />
       ))}
-      <p class="text-sm text-zinc-600">No article yet.</p>
+      {articles.length === 0 && <p class="text-sm text-zinc-600">No article yet.</p>}
     </TopicSection>
   </TopicPageFirstColumn>
   <TopicPageSecondColumn>

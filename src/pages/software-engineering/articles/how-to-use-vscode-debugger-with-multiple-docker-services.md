@@ -3,7 +3,6 @@ layout: ../../../layouts/Article.astro
 pubDate: 2022-06-10
 title: How to use VSCode debugger with multiple Docker services
 description: In my company, we use Docker and Docker Compose to run our Node.js services locally. Recently, I needed to configure and run the VSCode debugger on some of these services to debug a feature. There are a few things to know to achieve this, which I will share in this article with some basic examples.
-category: software-engineering
 ---
 
 # How to use VSCode debugger with multiple Docker services

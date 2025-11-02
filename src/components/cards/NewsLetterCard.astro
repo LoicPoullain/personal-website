@@ -17,7 +17,7 @@ const topic = category === 'software-engineering' ? 'software engineering' : 'en
       Get notified when I publish something new about <span class="font-semibold">{topic}</span>. You can unsubscribe at any time.
     </p>
     <div class="mt-6">
-      <TechNewsletterForm buttonText="Join" />
+      <TechNewsletterForm buttonText="Join" category={category} />
     </div>
   </SideCard>
 )}

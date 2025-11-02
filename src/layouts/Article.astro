@@ -16,7 +16,6 @@ interface Props {
     pubDate: string;
     title: string;
     description: string;
-    category: 'software-engineering' | 'entrepreneurship';
   }
 }
 
@@ -24,6 +23,10 @@ const { frontmatter } = Astro.props;
 
 const site = Astro.site;
 const fullUrl = new URL(Astro.url.pathname, site).href;
+
+const category = Astro.url.pathname.startsWith('/software-engineering') ? 'software-engineering' : Astro.url.pathname.startsWith('/entrepreneurship') ? 'entrepreneurship' : null;
+
+const topic = category === 'software-engineering' ? 'software engineering' : 'entrepreneurship';
 ---
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -78,14 +81,14 @@ const fullUrl = new URL(Astro.url.pathname, site).href;
         </SocialLink>
       </div>
     </section>
-    {frontmatter.category === 'software-engineering' && (
+    {(category === 'software-engineering' || category === 'entrepreneurship') && (
       <section class="max-w-2xl mx-auto mt-12">
         <div class="bg-zinc-50 rounded-lg p-6 shadow-sm">
           <h3 class="text-lg font-semibold text-zinc-800 mb-2">Stay up to date</h3>
           <p class="text-sm text-zinc-600 mb-4">
-            Get notified when I publish something new. You can unsubscribe at any time.
+            Get notified when I publish something new about <span class="font-semibold">{topic}</span>.
           </p>
-          <TechNewsletterForm buttonText="Subscribe" />
+          <TechNewsletterForm buttonText="Subscribe" category={category} />
         </div>
       </section>
     )}

@@ -1,9 +1,10 @@
 ---
 interface Props {
   buttonText: string;
+  category: 'software-engineering' | 'entrepreneurship';
 }
 
-const { buttonText } = Astro.props;
+const { buttonText, category } = Astro.props;
 ---
 
 <!-- Begin Brevo Form -->

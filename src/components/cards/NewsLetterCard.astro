@@ -11,7 +11,7 @@ const { category } = Astro.props;
 const topic = category === 'software-engineering' ? 'software engineering' : 'entrepreneurship';
 ---
 
-{category === 'software-engineering' && (
+{(category === 'software-engineering' || category === 'entrepreneurship') && (
   <SideCard title="Stay up to date" icon="letter">
     <p class="mt-2 text-sm text-zinc-600">
       Get notified when I publish something new about <span class="font-semibold">{topic}</span>. You can unsubscribe at any time.

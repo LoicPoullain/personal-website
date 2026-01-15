@@ -4,7 +4,7 @@ import TopicPage from "../layouts/TopicPage.astro";
 import TopicSection from "../layouts/TopicSection.astro";
 import TopicPageFirstColumn from "../layouts/TopicPageFirstColumn.astro";
 import TopicPageSecondColumn from "../layouts/TopicPageSecondColumn.astro";
-import LinkCard from "../components/cards/LinkCard.astro";
+import SimpleListCard from "../components/cards/SimpleListCard.astro";
 import { formatAndSortArticles } from "../utils/format-and-sort-articles";
 
 const articles = formatAndSortArticles(import.meta.glob('./entrepreneurship/articles/*.md', { eager: true }));
@@ -18,12 +18,10 @@ const articles = formatAndSortArticles(import.meta.glob('./entrepreneurship/arti
   <TopicPageFirstColumn>
     <TopicSection title="Articles">
       {articles.map(article => (
-        <LinkCard 
+        <SimpleListCard 
           title={article.title}
-          description={article.description}
           url={article.url}
           date={article.pubDate}
-          linkText="Read article"
         />
       ))}
       {articles.length === 0 && <p class="text-sm text-zinc-600">No article yet.</p>}

@@ -1,0 +1,29 @@
+---
+import { formatDate } from '../../utils/format-date';
+
+interface Props {
+  title: string;
+  date?: string;
+  url: string;
+}
+
+const { title, date, url } = Astro.props;
+
+const isExternalLink = url.startsWith('http');
+---
+
+<a 
+  href={url} 
+  target={isExternalLink ? '_blank' : '_self'}
+  class="group flex items-baseline justify-between gap-4 py-3 hover:bg-zinc-50 -mx-4 px-4 rounded-lg transition"
+>
+  <span class="text-zinc-800 font-medium group-hover:text-yellow-600 transition">{title}</span>
+  {date && (
+    <time
+      class="text-sm text-zinc-400 whitespace-nowrap flex-shrink-0"
+      datetime={formatDate(date)}
+    >
+      {formatDate(date)}
+    </time>
+  )}
+</a>

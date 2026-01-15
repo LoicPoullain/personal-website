@@ -6,16 +6,17 @@ import Layout from "./Layout.astro";
 interface Props {
   title: string;
   description: string;
+  showSocialLinks?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, showSocialLinks } = Astro.props;
 ---
 
 <Layout title={'Loïc Poullain - ' + title} description={description}>
   <Hero
     title={title}
     description={description}
-    isTopicPage
+    showSocialLinks={showSocialLinks}
   />
   <Container>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-16 lg:gap-y-20">

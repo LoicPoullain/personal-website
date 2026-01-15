@@ -9,17 +9,17 @@ import BlueskyLogo from "./logos/BlueskyLogo.astro";
 interface Props {
   title: string;
   description: string;
-  isTopicPage?: boolean;
+  showSocialLinks?: boolean;
 }
 
-const { title, description, isTopicPage } = Astro.props;
+const { title, description, showSocialLinks } = Astro.props;
 ---
 
 <Container>
   <section class="pt-6 pb-20 md:pt-10 max-w-3xl">
-    <h1 class={"font-bold font-serif leading-14 tracking-wide text-zinc-800 text-4xl " + (isTopicPage ? "" : "sm:text-5xl")}>{title}</h1>
+    <h1 class={"font-bold font-serif leading-14 tracking-wide text-zinc-800 text-4xl " + (showSocialLinks ? "sm:text-5xl" : "")}>{title}</h1>
     <p class="mt-6 text-base text-zinc-600">{description}</p>
-    {!isTopicPage && <div class="mt-6 flex gap-4">
+    {showSocialLinks && <div class="mt-6 flex gap-4">
       <SocialLink
         href='https://twitter.com/Loic_Poullain'
         name='Follow on Twitter'

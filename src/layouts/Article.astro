@@ -31,10 +31,10 @@ const topic = category === 'software-engineering' ? 'software engineering' : 'en
 
 <Layout title={frontmatter.title} description={frontmatter.description}>
   <Container>
-    <time datetime={frontmatter.pubDate} class="max-w-2xl mx-auto block text-sm text-center text-zinc-400 pb-6">{formatDate(frontmatter.pubDate)}</time>
+    <time datetime={frontmatter.pubDate} class="max-w-2xl mx-auto block text-sm text-center text-zinc-400 pb-10">{formatDate(frontmatter.pubDate)}</time>
     <article class="max-w-2xl mx-auto prose
     text-zinc-600
-      prose-h1:font-bold prose-h1:font-serif prose-h1:tracking-wide prose-h1:text-zinc-800 prose-h1:text-4xl prose-h1:text-center
+      prose-h1:font-bold prose-h1:font-serif prose-h1:tracking-wide prose-h1:text-zinc-800 prose-h1:text-4xl prose-h1:text-center prose-h1:mb-12 
       prose-code:before:content-none prose-code:after:content-none
       prose-a:underline-offset-4 prose-a:text-inherit prose-a:font-light prose-a:hover:no-underline prose-a:hover:text-yellow-600
       leading-7">

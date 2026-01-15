@@ -92,5 +92,12 @@ const topic = category === 'software-engineering' ? 'software engineering' : 'en
         </div>
       </section>
     )}
+    {(category === 'software-engineering' || category === 'entrepreneurship') && (
+      <div class="max-w-2xl mx-auto mt-8 text-center">
+        <a href={`/${category}`} class="text-sm text-zinc-400 hover:text-zinc-600 transition-colors">
+          See all articles
+        </a>
+      </div>
+    )}
   </Container>
 </Layout>

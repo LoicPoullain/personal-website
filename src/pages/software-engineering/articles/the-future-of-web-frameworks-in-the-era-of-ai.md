@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/Article.astro
 pubDate: 2026-02-24
-title: The future of web frameworks in the era of AI
+title: The future of web frameworks in the age of AI
 description: 
 ---
 

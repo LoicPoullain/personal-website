@@ -15,6 +15,7 @@ import assembleeNationaleLogo from "./assets/logos/assemblee_nationale.jpg";
 import centraleSupelecLogo from "./assets/logos/centralesupelec.jpg";
 import dassaultSystemesLogo from "./assets/logos/dassault_systemes.jpg";
 import datadogLogo from "./assets/logos/datadog.jpg";
+import maigretLogo from "./assets/logos/maigret.png";
 import { formatAndSortArticles } from "../utils/format-and-sort-articles";
 
 const articles = formatAndSortArticles(import.meta.glob('./software-engineering/articles/*.md', { eager: true }));
@@ -22,7 +23,7 @@ const articles = formatAndSortArticles(import.meta.glob('./software-engineering/
 
 <TopicPage
   title="Software engineering"
-  description="My open source contributions, my articles and conferences on software engineering as well as my resume."
+  description="My open-source contributions, articles, and talks about software engineering."
   showSocialLinks
 >
   <TopicPageFirstColumn>
@@ -68,8 +69,16 @@ const articles = formatAndSortArticles(import.meta.glob('./software-engineering/
       title="Work"
       organizations={[
         {
+          name: 'Maigret',
+          role: 'Founder',
+          startDate: '2026',
+          endDate: 'Present',
+          url: 'https://www.maigret.io/',
+          image: maigretLogo
+        },
+        {
           name: "Maki People",
-          role: "Backend Software Engineer",
+          role: "Freelance Software Engineer",
           startDate: "2025",
           endDate: "2025",
           url: "https://www.makipeople.com/",
@@ -77,7 +86,7 @@ const articles = formatAndSortArticles(import.meta.glob('./software-engineering/
         },
         {
           name: "Findymail",
-          role: "Frontend Software Engineer",
+          role: "Freelance Software Engineer",
           startDate: "2025",
           endDate: "2025",
           url: "https://www.findymail.com/",

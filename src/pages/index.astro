@@ -4,8 +4,8 @@ import Hero from '../components/Hero.astro';
 import Container from "../layouts/Container.astro";
 import LinkCard from '../components/cards/LinkCard.astro';
 
-const title = "Software engineer and entrepreneur";
-const description = "Hello and welcome to my personal website. I'm Loïc, a software engineer and entrepreneur, and I write articles and produce content on various subjects, particularly software engineering and astronomy.";
+const title = "Software engineer and founder of Maigret";
+const description = "Hello and welcome to my personal website. I'm Loïc, a senior software engineer, and I write articles and produce content on software engineering and astronomy.";
 ---
 
 <Layout title={'Loïc Poullain - ' + title} description={description}>
@@ -18,24 +18,28 @@ const description = "Hello and welcome to my personal website. I'm Loïc, a soft
 		<section
 			class="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-2"
 		>
-			<LinkCard
-				title="Software engineering"
-				description="My open source contributions, my articles and conferences on software engineering as well as my resume."
-				url="/software-engineering"
-				linkText="Read more"
-			/>
+			<div>
+				<LinkCard
+					title="Software engineering"
+					description="My open-source contributions, articles, and talks about software engineering."
+					url="/software-engineering"
+					linkText="Read more"
+				/>
+			</div>
 			<!-- <LinkCard
 				title="Entrepreneurship"
 				description="My company and some testimonials and thoughts on my entrepreneurial journey."
 				url="/entrepreneurship"
 				linkText="Read more"
 			/> -->
-			<LinkCard
-				title="Documentaries (FR)"
-				description="Documentaries I've made on various subjects that interest me, especially astronomy."
-				url="/documentaries"
-				linkText="See more"
-			/>
+			<div>
+				<LinkCard
+					title="Documentaries (FR)"
+					description="My documentaries on topics that interest me, particularly astronomy."
+					url="/documentaries"
+					linkText="See more"
+				/>
+			</div>
 		</section>
 	</Container>
 </Layout>
